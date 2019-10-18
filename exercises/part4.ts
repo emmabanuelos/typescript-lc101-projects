@@ -19,15 +19,15 @@ let kilometersToTheMoon: number = 384400;
 // Define your Spacecraft class here:
 class Spacecraft {
     milesPerKilometer: number = 0.621;
-    name: string;
-    speedMph: number;
+    name: string = "Space Shuttle";
+    speedMph: number = 17500;
     getDaystoLocation: number;
     constructor(name:string, speedMph:number) {
         this.name = name;
         this.speedMph = speedMph;
-        this.getDaystoLocation = function getDaysToLocation (kilometersAway:number):number {
-            let milesAway: number = kilometersAway * milesPerKilometer;
-            let hours: number = milesAway / speedMph;
+        function getDaysToLocation (kilometersAway:number):number {
+            let milesAway: number = kilometersAway * this.milesPerKilometer;
+            let hours: number = milesAway / this.speedMph;
                 return hours / 24;
             }
     }

@@ -14,13 +14,15 @@ var kilometersToTheMoon = 384400;
 var Spacecraft = /** @class */ (function () {
     function Spacecraft(name, speedMph) {
         this.milesPerKilometer = 0.621;
+        this.name = "Space Shuttle";
+        this.speedMph = 17500;
         this.name = name;
         this.speedMph = speedMph;
-        this.getDaystoLocation = function getDaysToLocation(kilometersAway) {
-            var milesAway = kilometersAway * milesPerKilometer;
-            var hours = milesAway / speedMph;
+        function getDaysToLocation(kilometersAway) {
+            var milesAway = kilometersAway * this.milesPerKilometer;
+            var hours = milesAway / this.speedMph;
             return hours / 24;
-        };
+        }
     }
     return Spacecraft;
 }());
